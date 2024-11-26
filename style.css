@@ -173,3 +173,24 @@ button:hover {
     scale: 0.9;
   }
 }
+
+@media (max-width: 450px) {
+  .face {
+    width: 120px;
+    height: 120px;
+  }
+
+  .faceDice1 {
+    left: calc(50% - 160px);
+    top: calc(50% - 60px);
+  }
+
+  .faceDice2 {
+    left: calc(50% + 40px);
+    top: calc(50% - 60px);
+  }
+
+  button {
+    bottom: 60px;
+  }
+}
