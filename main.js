@@ -30,7 +30,7 @@ body.addEventListener("keypress", (e) => {
     audioRoll.currentTime = 0;
     audioRoll.play();
 
-    setTimeout(rollDice(), 200);
+    setTimeout(rollDice(), 500);
   }
   console.log(code);
 });
@@ -39,7 +39,7 @@ btnRoll.addEventListener("click", () => {
   audioRoll.currentTime = 0;
   audioRoll.play();
 
-  setTimeout(rollDice(), 200);
+  setTimeout(rollDice(), 500);
   btnRoll.blur();
 });
 
