@@ -33,6 +33,7 @@ h1 {
   text-align: center;
   max-width: 500px;
   line-height: 33px;
+  text-wrap: balance;
 }
 
 .face {
@@ -175,9 +176,19 @@ button:hover {
 }
 
 @media (max-width: 450px) {
+  h1 {
+    font-size: 16px;
+    padding: 0 12px;
+    line-height: 24px;
+  }
+
   .face {
     width: 120px;
     height: 120px;
+  }
+
+  .face p {
+    font-size: 14px;
   }
 
   .faceDice1 {
@@ -192,5 +203,6 @@ button:hover {
 
   button {
     bottom: 60px;
+    font-size: 14px;
   }
 }
