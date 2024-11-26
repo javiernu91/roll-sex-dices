@@ -1,0 +1,175 @@
+:root {
+  --face-doll-bg: #e3dac9;
+  --face-doll-bg-hover: #b69456;
+  --face-doll-txt: #382603;
+  --principal-shadow: #382603;
+  --secondary-shadow: #b69456;
+  --white: #eee;
+  --black: #222;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--black);
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+h1 {
+  font-size: 22px;
+  color: var(--white);
+  font-weight: 600;
+  text-transform: uppercase;
+  position: fixed;
+  top: 30px;
+  text-align: center;
+  max-width: 500px;
+  line-height: 33px;
+}
+
+.face {
+  width: 200px;
+  height: 200px;
+  border: none;
+  display: grid;
+  place-items: center;
+  position: fixed;
+  border-radius: 12px;
+  background-color: var(--face-doll-bg);
+  box-shadow: 2px 2px 10px 0px var(--principal-shadow),
+    inset 0px 0px 5px 5px var(--secondary-shadow);
+}
+.faceDice1 {
+  left: calc(50% - 250px);
+  top: calc(50% - 150px);
+  visibility: hidden;
+}
+
+.faceDice2 {
+  left: calc(50% + 50px);
+  top: calc(50% - 150px);
+  visibility: hidden;
+}
+
+.face:hover {
+  scale: 1.01;
+}
+.initial {
+  visibility: visible;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.face p {
+  color: var(--face-doll-txt);
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  padding: 18px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.dices__container {
+  transform-origin: center;
+}
+
+button {
+  position: fixed;
+  bottom: 150px;
+  cursor: pointer;
+  padding: 24px 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  line-height: 18px;
+  background-color: var(--face-doll-bg);
+  color: var(--face-doll-txt);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1.1px;
+  box-shadow: 2px 2px 10px 0px var(--principal-shadow);
+  transition: all 0.2s ease-in-out;
+}
+
+.animation1 {
+  animation: 0.3s ease-in alternate roll1;
+  animation-iteration-count: 1;
+}
+
+.animation2 {
+  animation: 0.2s ease-in reverse roll2;
+  animation-iteration-count: 1;
+}
+
+button:hover {
+  scale: 1.05;
+  background-color: var(--face-doll-bg-hover);
+  color: var(--white);
+}
+
+@keyframes roll1 {
+  0%,
+  100% {
+    rotate: 0deg;
+    scale: 1;
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateY(-50px);
+    transform-style: preserve-3d;
+    scale: 1.05;
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateY(50px);
+    scale: 0.95;
+  }
+}
+
+@keyframes roll2 {
+  0%,
+  100% {
+    rotate: 0deg;
+    scale: 1;
+  }
+
+  8%,
+  25%,
+  45%,
+  70%,
+  90% {
+    transform: translateY(-60px);
+    transform-style: preserve-3d;
+
+    scale: 1.05;
+  }
+
+  15%,
+  35%,
+  60%,
+  80% {
+    transform: translateY(60px);
+    /* transform-origin: center; */
+
+    scale: 0.9;
+  }
+}
