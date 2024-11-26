@@ -181,12 +181,12 @@ button:hover {
   }
 
   .faceDice1 {
-    left: calc(50% - 160px);
+    left: calc(50% - 145px);
     top: calc(50% - 60px);
   }
 
   .faceDice2 {
-    left: calc(50% + 40px);
+    left: calc(50% + 25px);
     top: calc(50% - 60px);
   }
 
