@@ -51,13 +51,11 @@ h1 {
 .faceDice1 {
   left: calc(50% - 250px);
   top: calc(50% - 150px);
-  visibility: hidden;
 }
 
 .faceDice2 {
   left: calc(50% + 50px);
   top: calc(50% - 150px);
-  visibility: hidden;
 }
 
 .face:hover {

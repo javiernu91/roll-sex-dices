@@ -1,26 +1,16 @@
 const $ = (el) => document.querySelector(el);
+const $$ = (els) => document.querySelectorAll(els);
+
+faces = ["1", "2", "3", "4", "5", "6"];
 
 const body = $("body");
+const faceDice1 = $(".faceDice1");
+const faceDice21 = $(".faceDice2");
 
-const btnRoll = $("#btnRollDice");
-const front1 = $(".front1");
-const back1 = $(".back1");
-const left1 = $(".left1");
-const right1 = $(".right1");
-const bottom1 = $(".bottom1");
-const top1 = $(".top1");
-const initial = $(".initial");
 const dice1 = $(".dice1");
 const dice2 = $(".dice2");
 
 const audioRoll = $("#rollDiceAudio");
-
-const front2 = $(".front2");
-const back2 = $(".back2");
-const left2 = $(".left2");
-const right2 = $(".right2");
-const bottom2 = $(".bottom2");
-const top2 = $(".top2");
 
 audioRoll.preload = "auto";
 
