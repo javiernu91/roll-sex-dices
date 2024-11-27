@@ -14,7 +14,10 @@ const dice2 = $(".dice2");
 
 audioRoll.preload = "auto";
 
-const faces = ["1", "2", "3", "4", "5", "6"];
+const face1 = ["1", "2", "3", "4", "5", "6"];
+const face2 = ["1", "2", "3", "4", "5", "6"];
+const sexFace1 = ["a", "b", "c", "d", "c"];
+const sexFace2 = ["x", "y", "z", "w", "v"];
 
 body.addEventListener("keypress", (e) => {
   let code = e.key;
@@ -29,7 +32,7 @@ body.addEventListener("keypress", (e) => {
 btnRoll.addEventListener("click", () => {
   audioRoll.currentTime = 0;
   audioRoll.play();
-  setTimeout(rollDice(faces), 500);
+  setTimeout(rollDice(), 500);
   btnRoll.blur();
 });
 
@@ -37,8 +40,8 @@ const rollDice = () => {
   dice1.classList.toggle("animation1");
   dice2.classList.toggle("animation2");
 
-  const { randomNum1, randomNum2 } = randomRollDice(faces);
-  changeDiceContent(randomNum1, randomNum2);
+  const { randomVal1, randomVal2 } = randomRollDice(sexFace1, sexFace2);
+  changeDiceContent(randomVal1, randomVal2);
 
   setTimeout(function () {
     dice1.classList.toggle("animation1");
@@ -46,15 +49,15 @@ const rollDice = () => {
   }, 500);
 };
 
-const randomRollDice = (faces) => {
-  const randomNum1 = faces[Math.floor(Math.random() * faces.length)];
-  const randomNum2 = faces[Math.floor(Math.random() * faces.length)];
-  return { randomNum1, randomNum2 };
+const randomRollDice = (face1, face2) => {
+  const randomVal1 = face1[Math.floor(Math.random() * face1.length)];
+  const randomVal2 = face2[Math.floor(Math.random() * face2.length)];
+  return { randomVal1, randomVal2 };
 };
 
-const changeDiceContent = (randomNum1, randomNum2) => {
+const changeDiceContent = (randomVal1, randomVal2) => {
   const textDice1 = $(".diceText1");
   const textDice2 = $(".diceText2");
-  textDice1.innerHTML = randomNum1;
-  textDice2.innerHTML = randomNum2;
+  textDice1.innerHTML = randomVal1;
+  textDice2.innerHTML = randomVal2;
 };
