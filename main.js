@@ -12,12 +12,54 @@ const faceDice2 = $(".faceDice2");
 const dice1 = $(".dice1");
 const dice2 = $(".dice2");
 
+const softDices = $("#dicesSoft");
+const mediumDices = $("#dicesMedium");
+const hotDices = $("#dicesHot");
+
 audioRoll.preload = "auto";
 
-const face1 = ["1", "2", "3", "4", "5", "6"];
-const face2 = ["1", "2", "3", "4", "5", "6"];
-const sexFace1 = ["a", "b", "c", "d", "c"];
-const sexFace2 = ["x", "y", "z", "w", "v"];
+const niveles = {
+  soft: {
+    parts: ["Manos", "Espalda", "Cuello", "Cabello", "Pies", "Cara"],
+    actions: ["Acariciar", "Masajear", "Soplar", "Rozar", "Tocar", "Abrazar"],
+  },
+  medium: {
+    parts: [
+      "Espalda baja",
+      "Muslos",
+      "Hombros",
+      "Cintura",
+      "Rodillas",
+      "Pecho",
+    ],
+    actions: [
+      "Acariciar",
+      "Besar",
+      "Masajear",
+      "Presionar",
+      "Morder softmente",
+      "Lamer",
+    ],
+  },
+  hot: {
+    parts: [
+      "Cuello",
+      "Labios",
+      "Parte interna de los muslos",
+      "Abdomen",
+      "Zona íntima",
+      "Pecho",
+    ],
+    actions: [
+      "Besar apasionadamente",
+      "Lamer",
+      "Morder softmente",
+      "Explorar",
+      "Masajear intensamente",
+      "Acariciar provocativamente",
+    ],
+  },
+};
 
 body.addEventListener("keypress", (e) => {
   let code = e.key;
@@ -40,8 +82,25 @@ const rollDice = () => {
   dice1.classList.toggle("animation1");
   dice2.classList.toggle("animation2");
 
-  const { randomVal1, randomVal2 } = randomRollDice(sexFace1, sexFace2);
-  changeDiceContent(randomVal1, randomVal2);
+  if (softDices.checked) {
+    const { randomVal1, randomVal2 } = randomRollDice(
+      niveles.soft.parts,
+      niveles.soft.actions
+    );
+    changeDiceContent(randomVal1, randomVal2);
+  } else if (mediumDices.checked) {
+    const { randomVal1, randomVal2 } = randomRollDice(
+      niveles.medium.parts,
+      niveles.medium.actions
+    );
+    changeDiceContent(randomVal1, randomVal2);
+  } else if (hotDices.checked) {
+    const { randomVal1, randomVal2 } = randomRollDice(
+      niveles.hot.parts,
+      niveles.hot.actions
+    );
+    changeDiceContent(randomVal1, randomVal2);
+  }
 
   setTimeout(function () {
     dice1.classList.toggle("animation1");
