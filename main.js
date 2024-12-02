@@ -21,23 +21,16 @@ audioRoll.preload = "auto";
 const niveles = {
   soft: {
     parts: ["Manos", "Espalda", "Cuello", "Cabello", "Pies", "Cara"],
-    actions: ["Acariciar", "Masajear", "Soplar", "Rozar", "Tocar", "Abrazar"],
+    actions: ["Acariciar", "Masajear", "Soplar", "Besar", "Morder", "Abrazar"],
   },
   medium: {
-    parts: [
-      "Espalda baja",
-      "Muslos",
-      "Hombros",
-      "Cintura",
-      "Rodillas",
-      "Pecho",
-    ],
+    parts: ["Espalda baja", "Piernas", "Abdomen", "Cintura", "Cuello", "Pecho"],
     actions: [
       "Acariciar",
       "Besar",
       "Masajear",
-      "Presionar",
-      "Morder softmente",
+      "Rozar con los labios",
+      "Morder suavemente",
       "Lamer",
     ],
   },
@@ -46,15 +39,15 @@ const niveles = {
       "Cuello",
       "Labios",
       "Parte interna de los muslos",
-      "Abdomen",
+      "Culo",
       "Zona íntima",
       "Pecho",
     ],
     actions: [
       "Besar apasionadamente",
       "Lamer",
-      "Morder softmente",
-      "Explorar",
+      "Morder suavemente",
+      "Chupar",
       "Masajear intensamente",
       "Acariciar provocativamente",
     ],
@@ -115,8 +108,8 @@ const randomRollDice = (face1, face2) => {
 };
 
 const changeDiceContent = (randomVal1, randomVal2) => {
-  const textDice1 = $(".diceText1");
-  const textDice2 = $(".diceText2");
+  const textDice1 = $(".diceText2");
+  const textDice2 = $(".diceText1");
   textDice1.innerHTML = randomVal1;
   textDice2.innerHTML = randomVal2;
 };
